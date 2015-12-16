@@ -23,9 +23,8 @@ I use mix test.watch to run my tests automatically:
 	
 	$ mix test.watch
 
-TODO: 
-
-	- write solve tests
-	- finish solve
-	- Refactor many of the methods to better Enum methods, like reduce 
-	- Remove 'test.watch' dependancy from production set
+* TODO: 
+	* write solve tests
+	* finish solve
+	* Refactor many of the methods to better Enum methods, like reduce 
+	* Remove 'test.watch' dependancy from production set
