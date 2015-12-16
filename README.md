@@ -23,7 +23,7 @@ I use mix test.watch to run my tests automatically:
 	
 	$ mix test.watch
 
-	TODO: 
+TODO: 
 
 	- write solve tests
 	- finish solve
