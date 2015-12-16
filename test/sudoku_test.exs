@@ -14,18 +14,9 @@ defmodule SudokuTest do
   @empty_row for _ <- 1..9, do: nil
   @empty_board [@empty_row, @empty_row, @empty_row, @empty_row, @empty_row, @empty_row, @empty_row, @empty_row, @empty_row]
 
-  test "solved? works" do
-  	assert solved?([[nil]]) == false
-  end
-
-  test "solved? evaluates to false when cell is empty" do
-  	assert solved?([[1]]) == true
-  end
- 
-  test "valid_row? returns valid when row contains only 1 through 9" do
-  	# [head | tail] = @row1
-  	assert valid_row?(@row1) == true
-  end
+  test "solved? works", do: assert solved?([[nil]]) == false
+  test "solved? evaluates to false when cell is empty", do: assert solved?([[1]]) == true
+  test "valid_row? returns valid when row contains only 1 through 9", do: assert valid_row?(@row1) == true
 
   test "valid_row? Returns invalid when a row has duplicates" do
   	row = for n <- 1..8, do: n
@@ -34,15 +25,12 @@ defmodule SudokuTest do
   	assert valid_row?(row) == false
   end
 
-  test "valid_columns? base case" do
-  	assert valid_columns?([]) == true
-  end
-
+  test "valid_columns? base case", do: assert valid_columns?([]) == true
   test "valid_columns? returns false when second column has duplicates" do
 	columns = for n <- 1..8, do: [n, n+1]
-  	columns = columns ++ [[9,2]]
+  	duplicates_columns = columns ++ [[9,2]]
 
-  	assert valid_columns?(columns) == false
+  	assert valid_columns?(duplicates_columns) == false
   end
 
   test "valid_columns? works with multiple correct columns" do
@@ -66,6 +54,4 @@ defmodule SudokuTest do
   test "add_row_to_column base base", 					 do: assert add_row_to_columns([],[[1],[2],[3]]) 		== [[1],[2],[3]]
   test "add_row_to_column adds row to empty column", 	 do: assert add_row_to_columns([1,2,3],[]) 		 		== [[1],[2],[3]]
   test "add_row_to_column adds row to filled columns",	 do: assert add_row_to_columns([3,2,1],[[1],[2],[3]]) 	== [[1,3],[2,2],[3,1]] 
-
-
 end
