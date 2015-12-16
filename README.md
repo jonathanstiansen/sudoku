@@ -8,22 +8,20 @@ Each different column, and each row must have no duplicate numbers between 1 and
 
 This is mostly statically checked so you can use dialyzer - first navigate outside of your folders that are version controlled:
 	
-	```bash
 	$ git clone https://github.com/jeremyjh/dialyxir.git
 	$ cd dialyxir/
 	$ mix archive.build
 	$ mix archive.install
 	$ mix dialyzer.plt
-	```
 
 Now inside of the project you can run: 
 	
-		```bash $ mix dialyzer ```
+		$ mix dialyzer
 
 I run tests automatically source of how: https://chodounsky.net/2015/06/16/running-exunit-tests-when-file-changes/
 I use mix test.watch to run my tests automatically:
 	
-	```bash $ mix test.watch ```
+	$ mix test.watch
 
 	TODO: 
 
